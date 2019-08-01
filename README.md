@@ -49,10 +49,10 @@ sudo systemctl enable nginx.service
 [logo]: https://github.com/ohmcodes/AWS-EC2-setup-and-nginx-wordpress-postgresql-configurations/blob/master/default_apache.png?raw=true
 
 ## 7. Configure Nginx
-change values insde <>
 ```
 sudo nano /etc/nginx/nginx.conf
 ```
+
 Paste Code Below:  
 ```
 rtmp {
@@ -64,13 +64,13 @@ rtmp {
 			live on;
 			record off;
       
-      #RTMP EXAMPLES
-      #Facebook
+      			#RTMP EXAMPLES
+      			#Facebook
 			push rtmp://rtmp-pc.facebook.com:80/rtmp/{stream_key};
-      #Twitch
-      push rtmp://live-sea.twitch.tv/app/{stream_key};
-      #Youtube
-      rtmp://x.rtmp.youtube.com/live2/{stream_key};
+      			#Twitch
+      			push rtmp://live-sea.twitch.tv/app/{stream_key};
+      			#Youtube
+      			push rtmp://x.rtmp.youtube.com/live2/{stream_key};
       
 		}
 	}
