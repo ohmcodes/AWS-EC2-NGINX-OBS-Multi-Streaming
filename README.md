@@ -116,5 +116,20 @@ sudo systemctl restart stunnel4 && systemctl status stunnel4
 push rtmp://127.0.0.1:19350/rtmp/<facebook-live-stream-key>;
 ```
 
+# Multi-worker streaming example
+```
+sudo nano /etc/nginx/nginx.conf
+
+rtmp_auto_push on;
+```
+
+### USE reload so other stream prevent disconnection when you edit conf file
+```
+ sudo service nginx reload
+ 
+ instead of 
+ 
+ sudo service nginx restart
+```
 
 
