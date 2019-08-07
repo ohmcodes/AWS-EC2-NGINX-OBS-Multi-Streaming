@@ -1,4 +1,4 @@
-# AWS-EC2-NGINX-OBS-Multi-Streaming
+# AWS-EC2-NGINX-OBS-Multi-Streaming with Stunnel for RTMPS
 AWS-EC2/NGINX/OBS Multi Streaming for Free!
 
 ## 1. Initialization: EC2 Setup  
@@ -84,5 +84,37 @@ rtmp {
 https://stream.twitch.tv/ingests/
 ### Facebook
 https://www.facebook.com/live/ingests/
+
+
+
+### Installing stunnel4 & Config
+```
+sudo apt install stunnel4
+
+sudo nano /etc/stunnel/stunnel.conf
+
+setuid = stunnel4
+setgid = stunnel4
+pid=/tmp/stunnel.pid
+output = /var/log/stunnel4/stunnel.log
+include = /etc/stunnel/conf.d
+
+sudo nano /etc/default/stunnel4
+
+ENABLE=1
+
+sudo mkdir /etc/stunnel/conf.d/fb.conf
+
+[fb-live]
+client = yes
+accept = 127.0.0.1:19350
+connect = live-api-s.facebook.com:443
+verifyChain = no
+
+sudo systemctl restart stunnel4 && systemctl status stunnel4
+
+push rtmp://127.0.0.1:19350/rtmp/<facebook-live-stream-key>;
+```
+
 
 
