@@ -85,7 +85,8 @@ https://stream.twitch.tv/ingests/
 ### Facebook
 https://www.facebook.com/live/ingests/
 
-
+## Steam
+https://steamcommunity.com/groups/steambroadcasting/discussions/0/1752358461534694738/
 
 ### Installing stunnel4 & Config
 ```
