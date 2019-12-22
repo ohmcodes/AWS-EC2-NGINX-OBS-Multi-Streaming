@@ -132,5 +132,8 @@ rtmp_auto_push on;
  
  sudo service nginx restart
 ```
-
-
+```
+	custom 
+	rtmp://<server ip>/live
+	<streamkey of your choice>
+```
