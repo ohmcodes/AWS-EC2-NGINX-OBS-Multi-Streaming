@@ -104,7 +104,9 @@ sudo nano /etc/default/stunnel4
 
 ENABLE=1
 
-sudo mkdir /etc/stunnel/conf.d/fb.conf
+sudo mkdir /etc/stunnel/conf.d
+cd /etc/stunnel/conf.d/
+sudo touch fb.conf
 
 [fb-live]
 client = yes
@@ -113,6 +115,8 @@ connect = live-api-s.facebook.com:443
 verifyChain = no
 
 sudo systemctl restart stunnel4 && systemctl status stunnel4
+or
+sudo service stunnel4 start/stop/restart
 
 push rtmp://127.0.0.1:19350/rtmp/<facebook-live-stream-key>;
 ```
