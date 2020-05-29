@@ -1,6 +1,8 @@
 # AWS-EC2-NGINX-OBS-Multi-Streaming with Stunnel for RTMPS
 AWS-EC2/NGINX/OBS Multi Streaming for Free!
 
+## you can do this method to WSL, search in microsoft store and download ubuntu18 because AWS can easily remove you in free tier if your data get higher
+
 ## 1. Initialization: EC2 Setup  
 * Log in to AWS  
 * Go to AWS Console  
